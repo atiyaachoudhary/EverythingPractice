@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package com.practice;
+
+option java_multiple_files=true;
+
+message Student {
+  int32 student_id = 1;
+  string student_name = 2;
+  string student_gender = 3;
+  double student_contact = 4;
+  int32 professor_id = 5;
+}
+
+message Professor {
+  int32 professor_id = 1;
+  string professor_name = 2;
+  string gender = 3;
+  int32 student_id = 4;
+}
+
+service StudentProfessorService {
+
+  //urinary - synchronous:- client will send one request and server will respond with one response
+
+  rpc getProfessor(Professor) returns(Professor){}
+
+  //server-streaming - asynchronous
+  //client-streaming - asynchronous
+  //bi-directional streaming - asynchronous
+
+}
